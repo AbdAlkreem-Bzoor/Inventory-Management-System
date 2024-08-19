@@ -24,6 +24,7 @@ namespace Simple_Inventory_Management_System
                     case "Display": DispalyProducts(inventory); break;
                     case "Update": UpdateProduct(inventory); break;
                     case "Delete": DeleteProduct(inventory); break;
+                    case "Search": SearchProduct(inventory); break;
                 }
                 Console.WriteLine("__________________________________________________________________");
             }
@@ -53,7 +54,11 @@ namespace Simple_Inventory_Management_System
             }
             inventory.Delete(name);
         }
-        
-
+        public static void SearchProduct(Inventory inventory)
+        {
+            FormattingOutput.Fun1("Search");
+            string? name = Console.ReadLine(); name = name?.Trim();
+            inventory.Search(name);
+        }
     }
 }
