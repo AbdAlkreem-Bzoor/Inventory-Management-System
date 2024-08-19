@@ -23,6 +23,7 @@ namespace Simple_Inventory_Management_System
                     case "Add": AddProduct(inventory); break;
                     case "Display": DispalyProducts(inventory); break;
                     case "Update": UpdateProduct(inventory); break;
+                    case "Delete": DeleteProduct(inventory); break;
                 }
                 Console.WriteLine("__________________________________________________________________");
             }
@@ -41,5 +42,18 @@ namespace Simple_Inventory_Management_System
             }
             inventory.Update(name);
         }
+        public static void DeleteProduct(Inventory inventory)
+        {
+            FormattingOutput.Fun1("Delete");
+            string? name = Console.ReadLine(); name = name?.Trim();
+            while (!InputValidation.CheckName(name))
+            {
+                FormattingOutput.Fun2("Delete");
+                name = Console.ReadLine(); name = name?.Trim();
+            }
+            inventory.Delete(name);
+        }
+        
+
     }
 }

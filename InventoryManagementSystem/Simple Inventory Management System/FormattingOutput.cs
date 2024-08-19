@@ -8,6 +8,7 @@
             Console.WriteLine("To Add a Product, Write the word 'Add'");
             Console.WriteLine("To Display all Products, Write the word 'Display'");
             Console.WriteLine("To Update a Product, Write the word 'Update'");
+            Console.WriteLine("To Delete a Product, Write the word 'Delete'");
             Console.WriteLine("To Exit from the Console App, Write the word Exit\n\n\n");
         }
         public static void DisplayInstructionsOptions() => Console.WriteLine("Please Write a valid input!!!\nChoose one of the following : Add, Display, Update, Delete, Search, Exit");
