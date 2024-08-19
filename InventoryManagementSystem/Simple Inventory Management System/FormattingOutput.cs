@@ -12,8 +12,12 @@
             Console.WriteLine("To Search a Product, Write the word 'Search'");
             Console.WriteLine("To Exit from the Console App, Write the word Exit\n\n\n");
         }
-        public static void DisplayInstructionsOptions() => Console.WriteLine("Please Write a valid input!!!\nChoose one of the following : Add, Display, Update, Delete, Search, Exit");
-        public static void Fun1(string s) => Console.WriteLine($"Input the Product Name that you want to {s} : ");
-        public static void Fun2(string s) => Console.WriteLine($"Please Write a valid name for the {s}!!!\n");
+        private static string Options() => "Choose one of the following options : Add, Display, Update, Delete, Search, Exit\n";
+        public static void DisplayOptions() => Console.WriteLine(Options());
+        public static void DisplayOptionsError() => Console.WriteLine($"Please Write a valid input!!!\n{Options()}");
+        public static void DisplayProductInput() => Console.WriteLine("\n\nInput Product :\n\n");
+        public static void DisplayProductPropertieInput(string propertie) => Console.WriteLine($"Input Product {propertie} : ");
+        public static void DisplayProductPropertieError(string propertie) => Console.WriteLine($"Please Write a valid {propertie}!!!\n");
+        public static void DisplayNameForOptionsInput(string s) => Console.WriteLine($"Input the Product Name that you want to {s} : ");
     }
 }
