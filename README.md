@@ -1,6 +1,6 @@
 Simple Inventory Management System
 
-This system will allow a user to manage a list of products, where each product has a name, price, and quantity in stock.
+This system will allow the user to manage a list of products, where each product has a name, price, and quantity in stock.
 
 Here are the main functionalities of the system:
 
