@@ -21,11 +21,17 @@ namespace Simple_Inventory_Management_System
                 switch (input)
                 {
                     case "Add": AddProduct(inventory); break;
+                    case "Display": DispalyProducts(inventory); break;
+                    case "Update": UpdateProduct(inventory); break;
+                    case "Delete": DeleteProduct(inventory); break;
+                    case "Search": SearchProduct(inventory); break;
                 }
                 Console.WriteLine("__________________________________________________________________");
             }
         }
         public static void AddProduct(Inventory inventory) => inventory.Add(InputValidation.InputProduct());
+
+        public static void DispalyProducts(Inventory inventory) => inventory.Display();
 
     }
 }
