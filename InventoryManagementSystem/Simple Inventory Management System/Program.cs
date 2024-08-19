@@ -11,11 +11,12 @@ namespace Simple_Inventory_Management_System
             FormattingOutput.DisplayInstructions();
             while (true)
             {
+                FormattingOutput.DisplayOptions();
                 string? input = Console.ReadLine(); input = input?.Trim();
                 if (input == "Exit") break;
                 while (!InputValidation.IsValid(input))
                 {
-                    FormattingOutput.DisplayInstructionsOptions();
+                    FormattingOutput.DisplayOptionsError();
                     input = Console.ReadLine(); input = input?.Trim();
                 }
                 switch (input)
@@ -26,7 +27,7 @@ namespace Simple_Inventory_Management_System
                     case "Delete": DeleteProduct(inventory); break;
                     case "Search": SearchProduct(inventory); break;
                 }
-                Console.WriteLine("__________________________________________________________________");
+                Console.WriteLine("__________________________________________________________________\n\n");
             }
         }
         public static void AddProduct(Inventory inventory) => inventory.Add(InputValidation.InputProduct());
@@ -34,29 +35,19 @@ namespace Simple_Inventory_Management_System
         public static void DispalyProducts(Inventory inventory) => inventory.Display();
         public static void UpdateProduct(Inventory inventory)
         {
-            FormattingOutput.Fun1("Update");
+            FormattingOutput.DisplayNameForOptionsInput("Update");
             string? name = Console.ReadLine(); name = name?.Trim();
-            while (!InputValidation.CheckName(name))
-            {
-                FormattingOutput.Fun2("Update");
-                name = Console.ReadLine(); name = name?.Trim();
-            }
             inventory.Update(name);
         }
         public static void DeleteProduct(Inventory inventory)
         {
-            FormattingOutput.Fun1("Delete");
+            FormattingOutput.DisplayNameForOptionsInput("Delete");
             string? name = Console.ReadLine(); name = name?.Trim();
-            while (!InputValidation.CheckName(name))
-            {
-                FormattingOutput.Fun2("Delete");
-                name = Console.ReadLine(); name = name?.Trim();
-            }
             inventory.Delete(name);
         }
         public static void SearchProduct(Inventory inventory)
         {
-            FormattingOutput.Fun1("Search");
+            FormattingOutput.DisplayNameForOptionsInput("Search");
             string? name = Console.ReadLine(); name = name?.Trim();
             inventory.Search(name);
         }

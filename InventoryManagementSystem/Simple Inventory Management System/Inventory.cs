@@ -2,7 +2,7 @@
 {
     public class Inventory
     {
-        Dictionary<string, Product> inventory;
+        private Dictionary<string, Product> inventory;
 
         public Inventory()
         {
@@ -13,8 +13,7 @@
         {
             if (inventory.ContainsKey(product.Name))
             {
-                string s = Convert.ToString(inventory[product.Name].Quantity + product.Quantity);
-                inventory[product.Name].SetQuantity(s);
+                inventory[product.Name].Quantity += product.Quantity;
             }
             else inventory.Add(product.Name, product);
         }
