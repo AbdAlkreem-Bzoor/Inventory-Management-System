@@ -42,7 +42,7 @@ namespace Simple_Inventory_Management_System
         }
         public override string ToString()
         {
-            return $"Name : {Name}\nPrice : {Price}\nQuantity : {Quantity}";
+            return $"Name : {Name}\nPrice : ${Price}\nQuantity : {Quantity}";
         }
     }
 }
