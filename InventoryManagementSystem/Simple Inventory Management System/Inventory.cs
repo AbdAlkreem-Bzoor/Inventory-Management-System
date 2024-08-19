@@ -33,15 +33,9 @@
             if (name is null) return;
             if (inventory.ContainsKey(name))
             {
+                Product product = InputValidation.InputProduct();
                 inventory.Remove(name);
-                Console.WriteLine("Input Name : ");
-                name = Console.ReadLine();
-                Console.WriteLine("Input Price : ");
-                string? price = Console.ReadLine();
-                Console.WriteLine("Input Quantity : ");
-                string? quantity = Console.ReadLine();
-                Product product = new(name, price, quantity);
-                inventory.Add(product.Name, product);
+                Add(product);
             }
         }
         public void Delete(string? name)
