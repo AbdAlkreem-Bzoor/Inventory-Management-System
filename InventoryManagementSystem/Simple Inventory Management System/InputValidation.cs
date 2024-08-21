@@ -37,34 +37,5 @@
             if (!int.TryParse(quantity, out int _quantity) || _quantity < 0) return false;
             return true;
         }
-        public static Product InputProduct()
-        {
-            FormattingOutput.DisplayProductInput();
-            FormattingOutput.DisplayProductPropertieInput("Name");
-            string? name = Console.ReadLine();
-            while (!CheckName(name))
-            {
-                FormattingOutput.DisplayProductPropertieError("name");
-                FormattingOutput.DisplayProductPropertieInput("Name");
-                name = Console.ReadLine();
-            }
-            FormattingOutput.DisplayProductPropertieInput("Price");
-            string? price = Console.ReadLine();
-            while (!CheckPrice(price))
-            {
-                FormattingOutput.DisplayProductPropertieError("price");
-                FormattingOutput.DisplayProductPropertieInput("Price");
-                price = Console.ReadLine();
-            }
-            FormattingOutput.DisplayProductPropertieInput("Quantity");
-            string? quantity = Console.ReadLine();
-            while (!CheckQuantity(quantity))
-            {
-                FormattingOutput.DisplayProductPropertieError("quantity");
-                FormattingOutput.DisplayProductPropertieInput("Quantity");
-                quantity = Console.ReadLine();
-            }
-            return new(name, double.Parse(price ?? "0"), int.Parse(quantity ?? "0"));
-        }
     }
 }
