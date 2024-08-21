@@ -19,6 +19,37 @@ namespace Simple_Inventory_Management_System
             Price = price;
             Quantity = quantity;
         }
+
+        public static Product InputProduct()
+        {
+            FormattingOutput.DisplayProductInput();
+            FormattingOutput.DisplayProductPropertieInput("Name");
+            string? name = Console.ReadLine();
+            while (!InputValidation.CheckName(name))
+            {
+                FormattingOutput.DisplayProductPropertieError("name");
+                FormattingOutput.DisplayProductPropertieInput("Name");
+                name = Console.ReadLine();
+            }
+            FormattingOutput.DisplayProductPropertieInput("Price");
+            string? price = Console.ReadLine();
+            while (!InputValidation.CheckPrice(price))
+            {
+                FormattingOutput.DisplayProductPropertieError("price");
+                FormattingOutput.DisplayProductPropertieInput("Price");
+                price = Console.ReadLine();
+            }
+            FormattingOutput.DisplayProductPropertieInput("Quantity");
+            string? quantity = Console.ReadLine();
+            while (!InputValidation.CheckQuantity(quantity))
+            {
+                FormattingOutput.DisplayProductPropertieError("quantity");
+                FormattingOutput.DisplayProductPropertieInput("Quantity");
+                quantity = Console.ReadLine();
+            }
+            return new(name, double.Parse(price ?? "0"), int.Parse(quantity ?? "0"));
+        }
+
         public override string ToString()
         {
             return $"Name : {Name}\nPrice : ${Price}\nQuantity : {Quantity}";

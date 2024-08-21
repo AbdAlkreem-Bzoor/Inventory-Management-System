@@ -30,7 +30,7 @@ namespace Simple_Inventory_Management_System
                 Console.WriteLine("__________________________________________________________________\n\n");
             }
         }
-        public static void AddProduct(Inventory inventory) => inventory.Add(InputValidation.InputProduct());
+        public static void AddProduct(Inventory inventory) => inventory.Add(Product.InputProduct());
 
         public static void DispalyProducts(Inventory inventory) => inventory.Display();
         public static void UpdateProduct(Inventory inventory)

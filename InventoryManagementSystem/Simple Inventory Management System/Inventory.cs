@@ -32,7 +32,7 @@
             if (name is null) return;
             if (inventory.ContainsKey(name))
             {
-                Product product = InputValidation.InputProduct();
+                Product product = Product.InputProduct();
                 inventory.Remove(name);
                 Add(product);
             }
